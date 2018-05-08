@@ -1,0 +1,28 @@
+{
+  "name": "advice-function",
+  "version": "0.0.1",
+  "description": "Implementation of Advice pattern for functional programing",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape ./advice.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/jimmy-collazos/advice-function.git"
+  },
+  "keywords": [
+    "advice",
+    "fp",
+    "tools"
+  ],
+  "author": "Jimmy collazos <jimmy.collazos@gmail.com> (https://github.com/jimmy-collazos)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jimmy-collazos/advice-function/issues"
+  },
+  "homepage": "https://github.com/jimmy-collazos/advice-function#readme",
+  "devDependencies": {
+    "tape": "^4.9.0"
+  },
+  "dependencies": {}
+}
