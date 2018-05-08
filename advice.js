@@ -29,9 +29,8 @@ function advisable (primaryFn) {
     const pipeReducer = (acc, fn) => fn(...args, acc)
     const arroundReducer = (acc, fn) => fn (primaryFn, ...args, acc)
     let value
-    console.log('0', value)
+
     value = gn[BEFORE].reduce(pipeReducer, value)
-    console.log('1', value, gn[BEFORE])
     value = gn[AROUND].length && gn[AROUND].reduce(arroundReducer, value) || primaryFn(...args)
     value = gn[AFTER].reduce(pipeReducer, value)
 
