@@ -7,6 +7,12 @@ const factory = (sym) => (primaryFn) => (fn) => (advisable(primaryFn)[sym].push(
 
 module.exports = advisable;
 
+module.exports.before = factory(BEFORE);
+
+module.exports.after = factory(AFTER);
+
+module.exports.around = factory(AROUND);
+
 
 /**
  * Returns an advisable function.
@@ -44,34 +50,3 @@ function advisable (primaryFn) {
 
   return gn;
 }
-
-
-
-/**
- * Returns a function that applies an interceptor function
- * before the target function be applied. The result of
- * the interceptor is included as the last arg in the target
- * call.
- * @param   {Function} dn The interceptor function.
- * @returns {Function} The new Function.
- */
-module.exports.before = factory(BEFORE);
-
-/**
- * Returns a function that applies an interceptor function
- * after the target function has been applied. The result
- * of the target is included as the last arg in the interceptor
- * call.
- * @param   {Function} dn The interceptor function.
- * @returns {Function} The new Function.
- */
-module.exports.after = factory(AFTER);
-
-/**
- * Returns a function that adds an interceptor as the first
- * arg of the target function in the expectancy the target
- * function use it during its execution.
- * @param   {Function} dn The interceptor function.
- * @returns {Function} The new Function.
- */
-module.exports.around = factory(AROUND);
