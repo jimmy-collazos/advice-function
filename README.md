@@ -31,7 +31,7 @@ import advice from 'advice-function'
 // hello world
 const greeting = (pattern) => (name) => (pattern.replace('{name}', name))
 const hello = advice(greeting('Hello {name}'))
-  .arrount((mainFn) => (name) => {
+  .arround((mainFn) => (name) => {
     console.log('show wellcome message to', name)
     mainFn(name.toUpperCase())
     console.log(name, 'is greeted')
