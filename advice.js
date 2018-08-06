@@ -1,3 +1,6 @@
+const fluent = (fn, context) => (...args) => (fn(...args), context)
+const factory = (arr) => (fn) => arr.push(fn)
+
 /**
  * Returns an advisable function.
  * @function
@@ -21,10 +24,10 @@ module.exports = function advice(primaryFn) {
     return value
   }
 
-  const factory = (arr) => (fn) => (arr.push(fn), gn)
-  gn.before = factory(before);
-  gn.after = factory(after);
-  gn.arround = factory(arround);
+  
+  gn.before = fluent(factory(before), gn)
+  gn.after = fluent(factory(after), gn)
+  gn.arround = fluent(factory(arround), gn)
 
   return gn;
 }
