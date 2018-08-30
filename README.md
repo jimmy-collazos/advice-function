@@ -39,3 +39,7 @@ const hello = advice(greeting('Hello {name}'))
 
 hello('world')
 ```
+
+## License
+
+currency-format is licensed under the [MIT License](LICENSE).
